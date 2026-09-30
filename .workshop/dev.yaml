@@ -14,7 +14,7 @@ actions:
   copilot: |
     if [[ -z "${GH_TOKEN:-}" && -z "${GITHUB_TOKEN:-}" ]]; then
       echo "Error: set GH_TOKEN or GITHUB_TOKEN" >&2
-      echo "i.e. workshop run copilot --env GITHUB_TOKEN $GITHUB_TOKEN ..."
+      echo "i.e. workshop run --env GITHUB_TOKEN=$GITHUB_TOKEN -- copilot"
       exit 1
     fi
     if [ -n "$1" ]; then
