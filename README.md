@@ -13,10 +13,14 @@ Run:
 
 ## Launching Copilot (YOLO Mode)
 Source your Github PAT
+
 i.e.:
 ```sh
 export GITHUB_TOKEN=github_pat_<TOKEN_VALUE>
 ```
+
+Your PAT needs to have `Copilot Requests` Account permission with at least `Read-only` access to use copilot.
+Go [here](https://github.com/settings/personal-access-tokens) to setup a PAT.
 
 Run:
 ```sh
