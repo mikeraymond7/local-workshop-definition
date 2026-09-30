@@ -1,0 +1,24 @@
+name: dev
+base: ubuntu@24.04
+sdks:
+  - name: openspec
+    plugs:
+      openspec-dashboard:
+        interface: mount
+        workshop-target: /home/workshop/openspec/web-dashboard
+  - name: opencode
+  - name: uv
+  - name: copilot
+
+actions:
+  copilot: |
+    if [[ -z "${GH_TOKEN:-}" && -z "${GITHUB_TOKEN:-}" ]]; then
+      echo "Error: set GH_TOKEN or GITHUB_TOKEN" >&2
+      echo "i.e. workshop run copilot --env GITHUB_TOKEN $GITHUB_TOKEN ..."
+      exit 1
+    fi
+    if [ -n "$1" ]; then
+      copilot --yolo --interactive "$@"
+    else
+      copilot --yolo
+    fi
