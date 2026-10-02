@@ -12,11 +12,7 @@ Bind mounts are extremely useful to re-deploy the same workshop definition while
 # Go to your new workspace
 cd /path/to/workspace
 
-# Make the new workshop directory
-mkdir .workshop
-
-# Mount the new workshop directory
-sudo mount --bind /path/to/this/repo/.workshop/ ./.workshop
+ln -s /path/to/this/repo/.workshop/ .workshop
 ```
 
 ## Setting up the workshop
